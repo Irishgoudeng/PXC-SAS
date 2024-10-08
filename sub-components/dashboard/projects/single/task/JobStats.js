@@ -14,19 +14,18 @@ const JobStats = () => {
   const [stats, setStats] = useState({
     totalJobsThisMonth: 0,
     totalJobsThisYear: 0,
-    newJobs: 0,
     completedJobs: 0,
     overdueJobs: 0,
   });
 
-  // Helper function to check if job date is in the current month
+  // Helper function to check if job start date is in the current month
   const isCurrentMonth = (jobDate) => {
     const today = new Date();
     const jobCreationDate = new Date(jobDate);
     return jobCreationDate.getMonth() === today.getMonth() && jobCreationDate.getFullYear() === today.getFullYear();
   };
 
-  // Helper function to check if job date is in the current year
+  // Helper function to check if job start date is in the current year
   const isCurrentYear = (jobDate) => {
     const today = new Date();
     const jobCreationDate = new Date(jobDate);
@@ -54,14 +53,12 @@ const JobStats = () => {
     const calculateStats = () => {
       const totalJobsThisMonth = jobs.filter(job => isCurrentMonth(job.startDate)).length;
       const totalJobsThisYear = jobs.filter(job => isCurrentYear(job.startDate)).length;
-      const newJobs = jobs.filter(job => job.jobStatus === 'New').length;
-      const completedJobs = jobs.filter(job => job.jobStatus === 'Completed').length;
-      const overdueJobs = jobs.filter(job => new Date(job.endDate) < new Date() && job.jobStatus !== 'Completed').length;
+      const completedJobs = jobs.filter(job => job.jobStatus === 'Job Complete').length;
+      const overdueJobs = jobs.filter(job => new Date(job.endDate) < new Date() && job.jobStatus !== 'Job Complete').length;
 
       setStats({
         totalJobsThisMonth,
         totalJobsThisYear,
-        newJobs,
         completedJobs,
         overdueJobs,
       });

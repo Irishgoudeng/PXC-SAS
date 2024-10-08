@@ -1,6 +1,6 @@
 {
   "name": "sas-sapb1-portal",
-  "version": "2.2.1",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -76,7 +76,7 @@
     "react-toastify": "^10.0.5",
     "react-youtube": "^10.1.0",
     "redux": "^5.0.1",
-    "sass": "^1.77.8",
+    "sass": "^1.79.4",
     "simplebar": "^6.2.7",
     "simplebar-react": "^3.2.6",
     "styled-components": "^6.1.12",

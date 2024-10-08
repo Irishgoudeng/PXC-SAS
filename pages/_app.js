@@ -10,6 +10,7 @@ import { store } from 'store/store'
 // import theme style scss file
 import 'styles/theme.scss';
 
+
 // import default layouts
 import DefaultMarketingLayout from 'layouts/marketing/DefaultLayout';
 import DefaultDashboardLayout from 'layouts/dashboard/DashboardIndexTop';
@@ -31,6 +32,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="keywords" content={keywords} />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="/fonts/feather/feather.css" />
       </Head>
       <NextSeo
         title={title}
