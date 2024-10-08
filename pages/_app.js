@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import { store } from 'store/store';
 
 // import theme style scss file
-import 'styles/theme.scss';  // This is fine since it's a local import handled by Next.js
+import 'styles/theme.scss';  
 
 // import default layouts
 import DefaultMarketingLayout from 'layouts/marketing/DefaultLayout';
@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps }) {
           site_name: process.env.siteName,
           images: [
             {
-              url: '/images/og/geeks-ui-next-js-default-og-image.jpg',
+              url: '#',
               width: 1200,
               height: 630,
               alt: 'SAS - SAP B1 Portal',

@@ -5,6 +5,7 @@ export default function Document() {
     <Html>
       <Head>
         {/* Place external fonts or stylesheets here */}
+        
         <link rel="stylesheet" href="/fonts/feather/feather.css" />  {/* Feather Icons CSS */}
       </Head>
       <body>

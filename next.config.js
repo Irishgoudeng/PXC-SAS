@@ -4,7 +4,7 @@ const { Inter } = require('next/font/google');
 
 const nextConfig = {
   reactStrictMode: false,
-  swcMinify: true,
+  swcMinify: false,
   env: {
     SAP_B1_SERVICE_LAYER_URL: process.env.SAP_B1_SERVICE_LAYER_URL,
     SAP_B1_COMPANY_DB: process.env.SAP_B1_COMPANY_DB,
