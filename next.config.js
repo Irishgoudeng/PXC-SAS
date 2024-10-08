@@ -1,16 +1,19 @@
 
 /** @type {import('next').NextConfig} */
-const { Inter } = require('next/font/google');
+const path = require('path');
 
 const nextConfig = {
   reactStrictMode: false,
-  swcMinify: false,
+  swcMinify: true,
   env: {
     SAP_B1_SERVICE_LAYER_URL: process.env.SAP_B1_SERVICE_LAYER_URL,
     SAP_B1_COMPANY_DB: process.env.SAP_B1_COMPANY_DB,
     SAP_B1_USERNAME: process.env.SAP_B1_USERNAME,
     SAP_B1_PASSWORD: process.env.SAP_B1_PASSWORD,
     REACT_APP_GOOGLE_MAPS_API_KEY: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
   },
   async headers() {
     return [
@@ -21,20 +24,7 @@ const nextConfig = {
             key: 'NODE_TLS_REJECT_UNAUTHORIZED',
             value: '0', 
           },
-          {
-            key: 'Cache-Control',
-            value: 's-maxage=1, stale-while-revalidate=59',
-          },
         ],
-      },
-      {
-        source: "/fonts/(.*)",
-        headers: [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=31556952, immutable"
-          }
-        ]
       },
     ];
   },
