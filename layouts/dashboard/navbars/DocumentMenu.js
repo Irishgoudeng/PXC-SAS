@@ -67,7 +67,7 @@ const DocumentMenu = () => {
                 show
             >
                 <NavDropdown.Item
-                    href="/dashboard/documentation"
+                    href="#"
                     className="py-2 px-3"
                 >
                     <div className="d-flex align-items-center">
@@ -76,7 +76,7 @@ const DocumentMenu = () => {
                     </div>
                 </NavDropdown.Item>
                 <NavDropdown.Item
-                    href="/dashboard/changelog"
+                    href="#"
                     className="py-2 px-3"
                 >
                     <div className="d-flex align-items-center">
