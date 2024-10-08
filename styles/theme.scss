@@ -10,7 +10,9 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 // Feathers CSS for Before Icon
-@import url("/fonts/feather/feather.css");
+// @import url("/fonts/feather/feather.css");
+@import "../public/fonts/feather/feather.css";
+
 
 // Bootstrap functions
 @import "~bootstrap/scss/functions";
