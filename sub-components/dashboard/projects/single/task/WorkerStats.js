@@ -57,7 +57,7 @@ const WorkerStats = () => {
     <Row>
       <Col xl={4} lg={4} md={12} sm={12}>
         <StatRightBGIcon
-          title="User Statistics"
+          title="Workers Statistics"
           value={`${stats.totalUsers} Total`}
           summary={`${stats.active} Active | ${stats.inactive} Inactive`}
           iconName={mdiAccountGroup}
@@ -67,9 +67,9 @@ const WorkerStats = () => {
       </Col>
       <Col xl={4} lg={4} md={12} sm={12}>
         <StatRightBGIcon
-          title="ACTIVE USERS"
+          title="ACTIVE WORKERS"
           value={stats.active}
-          summary="Active Users Count"
+          summary="Active Workers Count"
           iconName={mdiAccountCheck}
           iconColorVariant="success"
           classValue="mb-4"

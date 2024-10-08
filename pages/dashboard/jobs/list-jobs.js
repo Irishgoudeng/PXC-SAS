@@ -147,11 +147,11 @@ const ViewJobs = () => {
 	// Table Columns
 	const columns = [
 		{
-			name: '#',
-			cell: (row, index) => index + 1,
-			sortable: false,
+			name: '',
+			cell: row => <ActionMenu jobId={row.id} />,
 			width: '60px',
 		},
+		
 		{
 			name: 'Job No.',
 			selector: row => row.jobNo,
@@ -216,11 +216,7 @@ const ViewJobs = () => {
 			sortable: true,
 			width: '120px',
 		},
-		{
-			name: '',
-			cell: row => <ActionMenu jobId={row.id} />,
-			width: '50px',
-		},
+		
 	];
 
 	// Fetch Data

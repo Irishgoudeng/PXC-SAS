@@ -105,6 +105,11 @@ const WorkersListItems = () => {
 	// Table columns
 	const columns = [
 		{
+			name: '',
+			cell: row => <ActionMenu workerId={row.workerId} />,
+			width: '50px',
+		},
+		{
 			name: '#',
 			selector: row => row.index,
 			sortable: true,
@@ -232,11 +237,7 @@ const WorkersListItems = () => {
 				),
 			width: '80px',
 		},
-		{
-			name: '',
-			cell: row => <ActionMenu workerId={row.workerId} />,
-			width: '50px',
-		},
+		
 	];
 
 	const subHeaderComponentMemo = useMemo(() => {

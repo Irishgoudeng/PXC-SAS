@@ -101,7 +101,7 @@ const CreateWorker = () => {
       });
   
       // Redirect after the user clicks OK
-      router.replace('/dashboard/workers/list');
+      router.replace('/dashboard/workers/create-worker');
   
       // Log this activity
       await logActivity('Worker Created', `${personalData.firstName} ${personalData.lastName} has been added as a worker.`);

@@ -6,8 +6,7 @@ const NavbarDefault = [
 		menuitem: 'Dashboard',
 		link: '#',
 		children: [
-			{ id: uuid(), menuitem: 'Overview', link: '/dashboard/overview', badge: 'New'},
-			{ id: uuid(), menuitem: 'Site Settings (Coming Soon)', link: '#' }
+			{ id: uuid(), menuitem: 'Overview', link: '/dashboard/overview'},
 		],
 		isAuthenticated: true,
 	},
@@ -85,6 +84,7 @@ const NavbarDefault = [
 		id: uuid(),
 		menuitem: 'Customers',
 		link: '#',
+		badge: 'NEW',
 		children: [
 			{
 				id: uuid(),
@@ -93,8 +93,8 @@ const NavbarDefault = [
 			},
 			{
 				id: uuid(),
-				menuitem: 'View Customers (On Going)',
-				link: '#'
+				menuitem: 'View Customers',
+				link: '/dashboard/customers/list'
 			}
 		],
 		isAuthenticated: true,
@@ -103,6 +103,7 @@ const NavbarDefault = [
 		id: uuid(),
 		menuitem: 'Locations',
 		link: '#',
+		badge: 'NEW',
 		children: [
 			{
 				id: uuid(),
@@ -111,8 +112,8 @@ const NavbarDefault = [
 			},
 			{
 				id: uuid(),
-				menuitem: 'View Locations (On Going)',
-				link: '#'
+				menuitem: 'View Locations',
+				link: '/dashboard/locations/list'
 			}
 		],
 		isAuthenticated: true,

@@ -1,5 +1,6 @@
 import { Row, Col, Container, Card, Breadcrumb } from 'react-bootstrap';
 import { GeeksSEO, PageHeading } from 'widgets'
+import { toast, ToastContainer } from 'react-toastify';
 
 import AddNewJobs from 'sub-components/dashboard/jobs/CreateJobs';
 
@@ -25,6 +26,7 @@ const CreateJobs = () => {
         </Row>
         <Col xl={12} lg={12} md={12} sm={12}>
             <Card className="shadow-sm">
+            <ToastContainer />
                 <Card.Body>
                   <AddNewJobs />
                 </Card.Body>

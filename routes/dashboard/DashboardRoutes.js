@@ -316,6 +316,12 @@ export const DashboardMenu = [
 	},
 	{
 		id: uuid(),
+		title: 'Documentation',
+		icon: 'clipboard',
+		link: '/dashboard/documentation'
+	},
+	{
+		id: uuid(),
 		title: 'Changelog',
 		icon: 'git-pull-request',
 		link: '/dashboard/changelog',
