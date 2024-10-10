@@ -1,19 +1,156 @@
-/* Ensures the event text in list view is always black */
-.fc-list-event-title, .fc-list-event-time, .fc-list-item-marker {
-    color: #000 !important; /* Ensures the event text in list view is always black */
+.custom-work-days.e-schedule .e-month-view .e-work-days.willsmith,
+.custom-work-days.e-schedule .e-vertical-view .e-work-hours.willsmith {
+    background-color: rgb(250 235 215 / 50%);
+}
+
+.custom-work-days.e-schedule .e-month-view .e-work-days.alice,
+.custom-work-days.e-schedule .e-vertical-view .e-work-hours.alice {
+    background-color: rgb(222 236 252 / 50%);
+}
+
+.custom-work-days.e-schedule .e-month-view .e-work-days.robson,
+.custom-work-days.e-schedule .e-vertical-view .e-work-hours.robson {
+    background-color: rgb(222 238 172 / 50%);
+}
+
+.custom-work-days.e-schedule .e-vertical-view .e-resource-cells {
+    height: 66px;
+}
+
+.custom-work-days.e-schedule .template-wrap {
+    display: flex;
+    text-align: left;
+}
+
+.custom-work-days.e-schedule .template-wrap .resource-image {
+    background-repeat: no-repeat;
+    background-size: 45px;
+    height: 45px;
+    width: 45px;
+}
+
+.custom-work-days.e-schedule .template-wrap .resource-details {
+    padding-left: 10px;
+}
+
+.custom-work-days.e-schedule .template-wrap .resource-details .resource-name {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.custom-work-days.e-schedule.e-device .template-wrap .resource-details .resource-name {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.custom-work-days.e-schedule.e-device .e-resource-tree-popup .e-fullrow {
+    height: 50px;
+}
+
+.custom-work-days.e-schedule.e-device .template-wrap .resource-details .resource-designation {
+    display: none;
+}
+
+.custom-work-days.e-schedule .template-wrap .resource-image.will-smith {
+    background-image: url('');
+}
+
+.custom-work-days.e-schedule .template-wrap .resource-image.alice {
+    background-image: url('');
+}
+
+.custom-work-days.e-schedule .template-wrap .resource-image.robson {
+    background-image: url('');
+}
+
+.schedule-control-section {
+    padding: 20px;
   }
   
-  /* Ensures the event text color remains consistent when highlighted */
-  .fc-list-event:hover .fc-list-event-title, 
-  .fc-list-event:hover .fc-list-event-time, 
-  .fc-list-event:hover .fc-list-item-marker {
-    color: #000 !important; /* Ensures the event text color remains consistent when highlighted */
+  .control-wrapper {
+    display: flex;
+    justify-content: space-between;
   }
   
-  /* Ensures the event text color remains black when the list item is active (highlighted) */
-  .fc-list-event.fc-event.active .fc-list-event-title,
-  .fc-list-event.fc-event.active .fc-list-event-time,
-  .fc-list-event.fc-event.active .fc-list-item-marker {
-    color: #000 !important;
+  .schedule-container {
+    width: 100%; /* Increase width to 80% */
+  }
+  
+  .treeview-container {
+    
+    /* background-color: #f5f5f5; */
+    /* padding: 20px; */
+  }
+  
+  
+  .title-container {
+    text-align: center;
+  }
+  
+  .title-text {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .template-wrap {
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
+  
+  .resource-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+  }
+  
+  .resource-details {
+    padding-left: 10px;
+  }
+  
+  .resource-name {
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 5px;
+  }
+  
+  .resource-designation {
+    font-size: 14px;
+    color: gray;
+  }
+  
+
+  .status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .status-available {
+    width: 180px;
+    background-color: #28a745;
+  }
+  
+  .status-not-available {
+    width: 180px;
+    background-color: #dc3545;
+  }
+  
+  .status-on-leave {
+    width: 180px;
+    background-color: #ffc107;
+  }
+  
+  .status-sick-leave {
+    width: 180px;
+    background-color: #17a2b8;
   }
   

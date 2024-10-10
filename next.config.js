@@ -11,6 +11,7 @@ const nextConfig = {
     SAP_B1_USERNAME: process.env.SAP_B1_USERNAME,
     SAP_B1_PASSWORD: process.env.SAP_B1_PASSWORD,
     REACT_APP_GOOGLE_MAPS_API_KEY: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    REACT_APP_SYNCFUSION_LICENSE_KEY: process.env.REACT_APP_SYNCFUSION_LICENSE_KEY,
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],

@@ -349,16 +349,16 @@ const Overview = () => {
 					<RecentActivity />
       </Col>
     </Row>
-    <Row>
+    {/* <Row>
       <Col xl={4} xs={12} className="mb-4 mb-xl-0">
-        {/* task by sections chart  */}
+      
         <TaskCompletionStatusChart />
       </Col>
       <Col xl={8} xs={12} className="mb-4 mb-xl-0">
-        {/* upcoming task list by assignee  */}
+        
         <UpcomingTaskList />
       </Col>
-    </Row>
+    </Row> */}
   </Fragment>
 
   );

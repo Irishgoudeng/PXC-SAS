@@ -5,7 +5,7 @@ import { ScheduleComponent, Day, Week, Month, Agenda, Inject } from '@syncfusion
 import { registerLicense } from '@syncfusion/ej2-base';
 
 // Register Syncfusion license
-registerLicense('ORg4AjUWIQA/Gnt2UlhhQlVMfV5AQmBIYVp/TGpJfl96cVxMZVVBJAtUQF1hTX9TdkFjWnpYdHdRQ2Je');
+registerLicense(process.env.REACT_APP_SYNCFUSION_LICENSE_KEY);
 
 const SchedulerComponent = () => {
     const eventSettings = {

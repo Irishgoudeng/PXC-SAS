@@ -54,64 +54,64 @@ const Settings = () => {
       case 'options':
         return (
           <Card className="shadow-sm">
-            <Card.Body>
-              <h5>Options</h5>
-              <h6>General</h6>
-              <ListGroup variant="flush">
-                <ListGroup.Item action onClick={() => handleMenuClick('general/company-info')}>Company Information</ListGroup.Item>
-                <ListGroup.Item action onClick={() => handleMenuClick('general/company-preferences')}>Company Preferences</ListGroup.Item>
-                <ListGroup.Item action onClick={() => handleMenuClick('general/estimate-job-status')}>Estimate & Job Statuses</ListGroup.Item>
-                <ListGroup.Item action onClick={() => handleMenuClick('general/field-worker-app-settings')}>Field Worker App Settings</ListGroup.Item>
-              </ListGroup>
-
-              {/* <h6 className="mt-4">Accounting</h6>
-              <ListGroup variant="flush">
-                <ListGroup.Item action onClick={() => handleMenuClick('accounting/quickbooks-online')}>QuickBooks Online</ListGroup.Item>
-                <ListGroup.Item action onClick={() => handleMenuClick('accounting/quickbooks-desktop')}>QuickBooks Desktop/Enterprise</ListGroup.Item>
-              </ListGroup> */}
-
-              <h6 className="mt-4">Access Management</h6>
-              <ListGroup variant="flush">
-                <ListGroup.Item action onClick={() => handleMenuClick('access-management/login-history')}>Login History</ListGroup.Item>
-              </ListGroup>
-
-              <h6 className="mt-4">Tools</h6>
-              <ListGroup variant="flush">
-                <ListGroup.Item action onClick={() => handleMenuClick('tools/data-import')}>Data Import</ListGroup.Item>
-              </ListGroup>
-
-              <h6 className="mt-4">List Management</h6>
-              <ListGroup variant="flush">
-                <ListGroup.Item action onClick={() => handleMenuClick('list-management/job-categories')}>Job Categories</ListGroup.Item>
-                <ListGroup.Item action onClick={() => handleMenuClick('list-management/product-service-categories')}>Product/Service Categories</ListGroup.Item>
-                <ListGroup.Item action onClick={() => handleMenuClick('list-management/warehouse-management')}>Warehouse Management</ListGroup.Item>
-                <ListGroup.Item action onClick={() => handleMenuClick('list-management/equipment-manufacturers')}>Equipment Manufacturers</ListGroup.Item>
-                <ListGroup.Item action onClick={() => handleMenuClick('list-management/equipment-types')}>Equipment Types</ListGroup.Item>
-                <ListGroup.Item action onClick={() => handleMenuClick('list-management/equipment-models')}>Equipment Models</ListGroup.Item>
-              </ListGroup>
-
-              {/* <h6 className="mt-4">Sherpa Criteria</h6>
-              <ListGroup variant="flush">
-                <ListGroup.Item action onClick={() => handleMenuClick('sherpa/worker-criteria')}>Sherpa Worker Criteria</ListGroup.Item>
-                <ListGroup.Item action onClick={() => handleMenuClick('sherpa/assets-criteria')}>Sherpa Assets Criteria</ListGroup.Item>
-                <ListGroup.Item action onClick={() => handleMenuClick('sherpa/plus-criteria')}>Sherpa+ Criteria</ListGroup.Item>
-              </ListGroup> */}
-
-{/* 
-              <h6 className="mt-4">Products & Services</h6>
-              <ListGroup variant="flush">
-                <ListGroup.Item action onClick={() => handleMenuClick('products-services/catalog')}>Catalog</ListGroup.Item>
-                <ListGroup.Item action onClick={() => handleMenuClick('products-services/inventory-list')}>Inventory List</ListGroup.Item>
-                <ListGroup.Item action onClick={() => handleMenuClick('products-services/inventory-management')}>Inventory Management</ListGroup.Item>
-                <ListGroup.Item action onClick={() => handleMenuClick('products-services/inventory-transfer-history')}>Inventory Transfer History</ListGroup.Item>
-              </ListGroup>
-
-              <h6 className="mt-4">Tax Management</h6>
-              <ListGroup variant="flush">
-                <ListGroup.Item action onClick={() => handleMenuClick('tax-management')}>Tax Management</ListGroup.Item>
-              </ListGroup> */}
-            </Card.Body>
-          </Card>
+          <Card.Body>
+            <h5>Options</h5>
+            <p className="text-muted">Manage your company information, preferences, and various settings</p>
+            
+            <h6>General</h6>
+            <ListGroup variant="flush">
+              <ListGroup.Item action onClick={() => handleMenuClick('general/company-info')}>
+                <i data-feather="info"></i> Company Information
+                <p className="text-muted small mb-0">View and edit your company's information</p>
+              </ListGroup.Item>
+              <ListGroup.Item action onClick={() => handleMenuClick('general/company-preferences')}>
+                <i data-feather="settings"></i> Company Preferences
+                <p className="text-muted small mb-0">Set general company preferences</p>
+              </ListGroup.Item>
+              <ListGroup.Item action onClick={() => handleMenuClick('general/field-worker-app-settings')}>
+                <i data-feather="smartphone"></i> Field Worker App Settings
+                <p className="text-muted small mb-0">Configure settings for field worker applications</p>
+              </ListGroup.Item>
+            </ListGroup>
+        
+            <h6 className="mt-4">Access Management</h6>
+            <ListGroup variant="flush">
+              <ListGroup.Item action onClick={() => handleMenuClick('access-management/login-history')}>
+                <i data-feather="lock"></i> Login History
+                <p className="text-muted small mb-0">Track and review login activity</p>
+              </ListGroup.Item>
+            </ListGroup>
+        
+            <h6 className="mt-4">List Management</h6>
+            <ListGroup variant="flush">
+              <ListGroup.Item action onClick={() => handleMenuClick('list-management/job-categories')}>
+                <i data-feather="briefcase"></i> Job Categories
+                <p className="text-muted small mb-0">Manage different job categories</p>
+              </ListGroup.Item>
+              <ListGroup.Item action onClick={() => handleMenuClick('list-management/product-service-categories')}>
+                <i data-feather="box"></i> Product/Service Categories
+                <p className="text-muted small mb-0">Categorize products and services</p>
+              </ListGroup.Item>
+              <ListGroup.Item action onClick={() => handleMenuClick('list-management/warehouse-management')}>
+                <i data-feather="truck"></i> Warehouse Management
+                <p className="text-muted small mb-0">Oversee warehouse operations</p>
+              </ListGroup.Item>
+              <ListGroup.Item action onClick={() => handleMenuClick('list-management/equipment-manufacturers')}>
+                <i data-feather="tool"></i> Equipment Manufacturers
+                <p className="text-muted small mb-0">List and manage equipment manufacturers</p>
+              </ListGroup.Item>
+              <ListGroup.Item action onClick={() => handleMenuClick('list-management/equipment-types')}>
+                <i data-feather="tag"></i> Equipment Types
+                <p className="text-muted small mb-0">Define different types of equipment</p>
+              </ListGroup.Item>
+              <ListGroup.Item action onClick={() => handleMenuClick('list-management/equipment-models')}>
+                <i data-feather="cpu"></i> Equipment Models
+                <p className="text-muted small mb-0">Maintain a list of equipment models</p>
+              </ListGroup.Item>
+            </ListGroup>
+          </Card.Body>
+        </Card>
+        
         );
       case 'users':
         return (
