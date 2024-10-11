@@ -1,10 +1,10 @@
-export const DefaultNavbar = `   
-<Navbar expand="lg">                             
-    <Navbar.Brand href="#home">
+export const Default = `   
+< expand="lg">                             
+    <.Brand href="#home">
         <Image src={Logo} alt="" loading="lazy"/> 
-    </Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
+    </.Brand>
+    <.Toggle aria-controls="basic--nav" />
+    <.Collapse id="basic--nav">
     <Nav className="me-auto">
         <Nav.Link href="#home">Home</Nav.Link>
         <Nav.Link href="#link">Link</Nav.Link>
@@ -17,50 +17,50 @@ export const DefaultNavbar = `
         </NavDropdown>
         <Nav.Link href="#link" disabled>Disabled</Nav.Link>
     </Nav>
-    </Navbar.Collapse>
-</Navbar>
+    </.Collapse>
+</>
     `.trim();
 
-export const BrandNavbar = `   
-<Navbar>
-    <Navbar.Brand href="#home">
+export const Brand = `   
+<>
+    <.Brand href="#home">
         <Image src={LogoIcon} width="30" height="30" alt="" loading="lazy"/>                                        
-    </Navbar.Brand>
-</Navbar> 
+    </.Brand>
+</> 
     `.trim();
 
 export const ColorSchemesCode = `   
-<Navbar bg="dark" variant="dark">
-    <Navbar.Brand href="#home"> <Image src={Logo} alt="" loading="lazy" /></Navbar.Brand>
+< bg="dark" variant="dark">
+    <.Brand href="#home"> <Image src={Logo} alt="" loading="lazy" /></.Brand>
     <Nav className="me-auto">
         <Nav.Link href="#home">Home</Nav.Link>
         <Nav.Link href="#features">Features</Nav.Link>
         <Nav.Link href="#pricing">Pricing</Nav.Link>
     </Nav>
-</Navbar>
+</>
 <br />
-<Navbar bg="primary" variant="dark">
+< bg="primary" variant="dark">
     <Container>
-        <Navbar.Brand href="#home"> <Image src={Logo} alt="" loading="lazy" /></Navbar.Brand>
+        <.Brand href="#home"> <Image src={Logo} alt="" loading="lazy" /></.Brand>
         <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
         </Nav>
     </Container>
-</Navbar>
+</>
 <br />
-<Navbar bg="light" variant="light">
+< bg="light" variant="light">
     <Container>
-        <Navbar.Brand href="#home"> <Image src={Logo} alt="" loading="lazy" /></Navbar.Brand>
+        <.Brand href="#home"> <Image src={Logo} alt="" loading="lazy" /></.Brand>
         <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
         </Nav>
     </Container>
-</Navbar>
+</>
 `.trim();
-export const NavbarsCode = [DefaultNavbar, BrandNavbar, ColorSchemesCode];
+export const sCode = [Default, Brand, ColorSchemesCode];
 
-export default NavbarsCode;
+export default sCode;

@@ -1,85 +1,95 @@
-import Link from 'next/link';
-import { Fragment, useState, useEffect } from 'react';
-import { useMediaQuery } from 'react-responsive';
-import { Row, Col, Image, Dropdown, ListGroup } from 'react-bootstrap';
-import SimpleBar from 'simplebar-react';
-import 'simplebar/dist/simplebar.min.css';
-import { GKTippy } from 'widgets';
-import DotBadge from 'components/bootstrap/DotBadge';
-import DarkLightMode from 'layouts/DarkLightMode';
-import NotificationList from 'data/Notification';
-import useMounted from 'hooks/useMounted';
-import { useRouter } from 'next/router';
-import Cookies from 'js-cookie';
-import { db } from '../firebase'; 
-import { collection, getDocs, doc, getDoc } from 'firebase/firestore';
+import Link from "next/link";
+import { Fragment, useState, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
+import { Row, Col, Image, Dropdown, ListGroup } from "react-bootstrap";
+import SimpleBar from "simplebar-react";
+import "simplebar/dist/simplebar.min.css";
+import { GKTippy } from "widgets";
+import DotBadge from "components/bootstrap/DotBadge";
+import DarkLightMode from "layouts/DarkLightMode";
+import NotificationList from "data/Notification";
+import useMounted from "hooks/useMounted";
+import { useRouter } from "next/router";
+import Cookies from "js-cookie";
+import { db } from "../firebase";
+import { collection, getDocs, doc, getDoc } from "firebase/firestore";
 
 const QuickMenu = () => {
-  const uid = Cookies.get('uid');
+  const uid = Cookies.get("uid");
   const hasMounted = useMounted();
-  const isDesktop = useMediaQuery({ query: '(min-width: 1224px)' });
+  const isDesktop = useMediaQuery({ query: "(min-width: 1224px)" });
   const router = useRouter();
   const [userDetails, setUserDetails] = useState(null);
 
   useEffect(() => {
     const fetchUserDetails = async () => {
-      const uid = Cookies.get('workerId');
+      const uid = Cookies.get("workerId");
       if (uid) {
         try {
-          const userRef = doc(collection(db, 'users'), uid);
+          const userRef = doc(collection(db, "users"), uid);
           const userDoc = await getDoc(userRef);
           if (userDoc.exists()) {
             setUserDetails(userDoc.data());
           } else {
-            console.log('User not found');
+            console.log("User not found");
           }
         } catch (error) {
-          console.error('Error fetching user details:', error.message);
+          console.error("Error fetching user details:", error.message);
         }
       } else {
         // Redirect to sign-in if UID is not available
-        router.push('/authentication/sign-in');
+        router.push("/authentication/sign-in");
       }
     };
-  
+
     fetchUserDetails();
   }, []);
-  
 
   const handleSignOut = async () => {
     try {
-      const response = await fetch('/api/logout', {
-        method: 'POST',
+      const response = await fetch("/api/logout", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       });
       if (response.ok) {
-        document.cookie = 'authToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly';
-        document.cookie = 'uid=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT;';
-        document.cookie = 'isAdmin=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT;';
-        document.cookie = 'workerId=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT;';
-        router.push('/authentication/sign-in');
+        document.cookie =
+          "authToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly";
+        document.cookie =
+          "uid=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT;";
+        document.cookie =
+          "isAdmin=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT;";
+        document.cookie =
+          "workerId=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT;";
+        router.push("/authentication/sign-in");
       } else {
-        throw new Error('Logout failed');
+        throw new Error("Logout failed");
       }
     } catch (error) {
-      console.error('Error logging out:', error.message);
+      console.error("Error logging out:", error.message);
     }
   };
 
   const Notifications = () => {
     return (
-      <SimpleBar style={{ maxHeight: '300px' }}>
+      <SimpleBar style={{ maxHeight: "300px" }}>
         <ListGroup variant="flush">
           {NotificationList.map(function (item, index) {
             return (
-              <ListGroup.Item className={index === 0 ? 'bg-light' : ''} key={index}>
+              <ListGroup.Item
+                className={index === 0 ? "bg-light" : ""}
+                key={index}
+              >
                 <Row>
                   <Col>
                     <Link href="#" className="text-body">
                       <div className="d-flex">
-                        <Image src={item.image} alt="" className="avatar-md rounded-circle" />
+                        <Image
+                          src={item.image}
+                          alt=""
+                          className="avatar-md rounded-circle"
+                        />
                         <div className="ms-3">
                           <h5 className="fw-bold mb-1">{item.sender}</h5>
                           <p className="mb-3">{item.message}</p>
@@ -96,7 +106,9 @@ const QuickMenu = () => {
                   </Col>
                   <Col xs="auto" className="text-center me-2">
                     <GKTippy content="Mark as unread">
-                      <Link href="#"><DotBadge bg="secondary"></DotBadge></Link>
+                      <Link href="#">
+                        <DotBadge bg="secondary"></DotBadge>
+                      </Link>
                     </GKTippy>
                   </Col>
                 </Row>
@@ -113,22 +125,25 @@ const QuickMenu = () => {
       {/* <DarkLightMode /> */}
       <ListGroup
         as="ul"
-        bsPrefix="navbar-nav"
-        className="navbar-right-wrap ms-2 d-flex nav-top-wrap"
+        bsPrefix="-nav"
+        className="-right-wrap ms-2 d-flex nav-top-wrap"
       >
         <Dropdown as="li">
-          <Dropdown.Toggle as="a"
-            bsPrefix=' '
+          <Dropdown.Toggle
+            as="a"
+            bsPrefix=" "
             id="dropdownNotification"
-            className="text-dark icon-notifications me-lg-1  btn btn-light btn-icon rounded-circle indicator indicator-primary text-muted">
+            className="text-dark icon-notifications me-lg-1  btn btn-light btn-icon rounded-circle indicator indicator-primary text-muted"
+          >
             <i className="fe fe-bell"></i>
           </Dropdown.Toggle>
           <Dropdown.Menu
             className="dashboard-dropdown notifications-dropdown dropdown-menu-lg dropdown-menu-end mt-4 py-0"
             aria-labelledby="dropdownNotification"
             align="end"
-            show={hasMounted && isDesktop ? true : false}>
-            <Dropdown.Item className="mt-3" bsPrefix=' ' as="div"  >
+            show={hasMounted && isDesktop ? true : false}
+          >
+            <Dropdown.Item className="mt-3" bsPrefix=" " as="div">
               <div className="border-bottom px-3 pt-0 pb-3 d-flex justify-content-between align-items-end">
                 <span className="h4 mb-0">Notifications</span>
                 <Link href="/" className="text-muted">
@@ -139,7 +154,10 @@ const QuickMenu = () => {
               </div>
               <Notifications />
               <div className="border-top px-3 pt-3 pb-3">
-                <Link href="/dashboard/notification-history" className="text-link fw-semi-bold">
+                <Link
+                  href="/dashboard/notification-history"
+                  className="text-link fw-semi-bold"
+                >
                   See all Notifications
                 </Link>
               </div>
@@ -190,9 +208,10 @@ const QuickMenu = () => {
               <i className="fe fe-user me-2"></i> Profile
             </Dropdown.Item>
 
-            <Dropdown.Item 
-            eventKey="3"
-            onClick={() => router.push("/dashboard/settings")}>
+            <Dropdown.Item
+              eventKey="3"
+              onClick={() => router.push("/dashboard/settings")}
+            >
               <i className="fe fe-settings me-2"></i> Settings
             </Dropdown.Item>
             <Dropdown.Divider />
@@ -204,6 +223,6 @@ const QuickMenu = () => {
       </ListGroup>
     </Fragment>
   );
-}
+};
 
 export default QuickMenu;
